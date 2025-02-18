@@ -55,8 +55,7 @@ The model follows the **Transformer** architecture with the following components
 ## Installation
 Clone the repository and install dependencies:
 ```bash
-$ git clone <repository_link>
-$ cd <repository_folder>
+
 $ pip install -r requirements.txt
 ```
 
