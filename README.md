@@ -68,12 +68,6 @@ To train the model, run:
 $ python train.py
 ```
 
-### Evaluation
-To evaluate the model on the validation set:
-```bash
-$ python evaluate.py
-```
-
 ### Sample Prediction
 | Source | Expected | Predicted |
 |--------|---------|-----------|
