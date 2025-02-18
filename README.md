@@ -1,15 +1,15 @@
-# English to Hindi Translation using Transformer from scratch
- 
+# English to Hindi Translation using Transformer from Scratch
 
 ## Overview
-This repository contains a full implementation of a **Transformer-based Neural Machine Translation (NMT) model** trained from scratch for **English-to-Hindi translation**. The model is implemented using **PyTorch** and follows the architecture outlined in the **"Attention Is All You Need"** paper.
+This repository contains a full implementation of a **Transformer-based Translation model** trained from scratch for **English-to-Hindi translation**. The model is implemented using **PyTorch** and follows the architecture outlined in the **"Attention Is All You Need"** paper.
 
 ## Features
 ✅ Implements **Self-Attention, Multi-Head Attention, and Positional Encoding** from scratch.
 ✅ Uses **custom tokenizers** trained on the dataset.
 ✅ Supports **CUDA acceleration** for faster training.
-✅ Evaluates using **greedy decoding** for predictions.
+✅ Evaluates using **greedy decoding** and plans for **beam search decoding**.
 ✅ Provides **training & validation accuracy/loss tracking**.
+✅ Saves **checkpoints for resuming training**.
 
 ---
 
@@ -17,8 +17,12 @@ This repository contains a full implementation of a **Transformer-based Neural M
 🖥️ **Training Device:** CUDA
 📊 **Train Dataset Size:** 1,659,083
 📊 **Validation Dataset Size:** 520
-⏳ **Total Training Time:** **74,026.96 seconds (~20.56 hours)**
+📦 **Batch Size:** 156
 📈 **Total Epochs:** 10
+⚡ **Learning Rate:** 1e-4
+📏 **Sequence Length:** 256
+🔢 **Model Embedding Dimension (d_model):** 256
+⏳ **Total Training Time:** **74,026.96 seconds (~20.56 hours)**
 
 ### Epoch Training Times:
 ```
@@ -43,16 +47,32 @@ The model follows the **Transformer** architecture with the following components
 - **Encoder & Decoder Layers**: Stacks of self-attention and feed-forward layers.
 - **Multi-Head Attention Mechanisms**: Improves contextual understanding.
 - **Projection Layer**: Outputs probabilities over the vocabulary.
+- **Residual Connections & Layer Normalization**: Ensures stable training.
+- **Dropout Regularization**: Helps prevent overfitting.
 
 ---
 
+## Installation
+Clone the repository and install dependencies:
+```bash
+$ git clone <repository_link>
+$ cd <repository_folder>
+$ pip install -r requirements.txt
+```
 
+---
 
 ## Usage
 ### Training
 To train the model, run:
 ```bash
 $ python train.py
+```
+
+### Evaluation
+To evaluate the model on the validation set:
+```bash
+$ python evaluate.py
 ```
 
 ### Sample Prediction
@@ -66,7 +86,8 @@ $ python train.py
 🔹 Improve translation accuracy using **beam search decoding**.
 🔹 Fine-tune model on **larger, domain-specific datasets**.
 🔹 Optimize tokenization with **subword embeddings (BPE)**.
-
+🔹 Implement **mixed precision training** for faster performance.
+🔹 Experiment with **pretrained embeddings for better contextual learning**.
 
 Would love feedback and suggestions! 🚀🔥
 
